@@ -1,0 +1,8 @@
+prefix=/home/skywalker/Documents/code/ros/catkin_ws/devel
+
+Name: learningService
+Description: Description of learningService
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

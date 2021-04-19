@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/skywalker/Documents/code/ros/catkin_ws/devel/setup.sh

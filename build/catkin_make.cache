@@ -1,0 +1,2 @@
+learningService:learningTopic
+-DCATKIN_DEVEL_PREFIX=/home/skywalker/Documents/code/ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/skywalker/Documents/code/ros/catkin_ws/install -G Unix Makefiles
