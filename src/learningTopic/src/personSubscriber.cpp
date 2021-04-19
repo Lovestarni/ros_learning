@@ -1,6 +1,6 @@
 /*
- * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/personSubscriber.cpp
- * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src
+ * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src/personSubscriber.cpp
+ * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src
  * Created Date: Saturday, April 17th 2021, 9:24:45 pm
  * Author: Skywalker Wang
  * 
@@ -10,8 +10,8 @@
 
 
 /*
- * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/poseSubscriber.cpp
- * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src
+ * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src/poseSubscriber.cpp
+ * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src
  * Created Date: Saturday, April 17th 2021, 8:34:54 pm
  * Author: Skywalker Wang
  * Function: 订阅turtle1/pose topic, 消息类型turtlesim::Pose
@@ -19,10 +19,10 @@
  */
 
 #include <ros/ros.h>
-#include "learningTopic/Person.h"
+#include "learning_topic/Person.h"
 
 //回调函数
-void infoCallback(const learningTopic::Person::ConstPtr& msg){
+void infoCallback(const learning_topic::Person::ConstPtr& msg){
     //打印出接收到的消息
     ROS_INFO("Publich Person Info: name:%s age:%d sex:%d", msg->name.c_str(), msg->age, msg->sex);
 }

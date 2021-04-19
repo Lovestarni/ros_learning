@@ -1,7 +1,7 @@
 ; Auto-generated. Do not edit!
 
 
-(cl:in-package learningTopic-msg)
+(cl:in-package learning_topic-msg)
 
 
 ;//! \htmlinclude Person.msg.html
@@ -30,21 +30,21 @@
 (cl:defmethod cl:initialize-instance :after ((m <Person>) cl:&rest args)
   (cl:declare (cl:ignorable args))
   (cl:unless (cl:typep m 'Person)
-    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name learningTopic-msg:<Person> is deprecated: use learningTopic-msg:Person instead.")))
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name learning_topic-msg:<Person> is deprecated: use learning_topic-msg:Person instead.")))
 
 (cl:ensure-generic-function 'name-val :lambda-list '(m))
 (cl:defmethod name-val ((m <Person>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learningTopic-msg:name-val is deprecated.  Use learningTopic-msg:name instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learning_topic-msg:name-val is deprecated.  Use learning_topic-msg:name instead.")
   (name m))
 
 (cl:ensure-generic-function 'sex-val :lambda-list '(m))
 (cl:defmethod sex-val ((m <Person>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learningTopic-msg:sex-val is deprecated.  Use learningTopic-msg:sex instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learning_topic-msg:sex-val is deprecated.  Use learning_topic-msg:sex instead.")
   (sex m))
 
 (cl:ensure-generic-function 'age-val :lambda-list '(m))
 (cl:defmethod age-val ((m <Person>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learningTopic-msg:age-val is deprecated.  Use learningTopic-msg:age instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader learning_topic-msg:age-val is deprecated.  Use learning_topic-msg:age instead.")
   (age m))
 (cl:defmethod roslisp-msg-protocol:symbol-codes ((msg-type (cl:eql '<Person>)))
     "Constants for message type '<Person>"
@@ -85,10 +85,10 @@
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Person>)))
   "Returns string type for a message object of type '<Person>"
-  "learningTopic/Person")
+  "learning_topic/Person")
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'Person)))
   "Returns string type for a message object of type 'Person"
-  "learningTopic/Person")
+  "learning_topic/Person")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Person>)))
   "Returns md5sum for a message object of type '<Person>"
   "8361f88618d6779bd872f0ba928ced56")

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(learningService)
+project(learning_service)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   turtlesim
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -75,6 +76,12 @@ find_package(catkin REQUIRED COMPONENTS
 #   geometry_msgs#   std_msgs
 # )
 
+# For Person.srv
+add_service_files(
+  FILES Person.srv
+)
+generate_messages(DEPENDENCIES std_msgs)
+
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
 ################################################
@@ -106,8 +113,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES learningService
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim
+#  LIBRARIES learning_service
+ CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim message_runtime
 #  DEPENDS system_lib
 )
 
@@ -124,7 +131,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/learningService.cpp
+#   src/${PROJECT_NAME}/learning_service.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +142,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/learningService_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/learning_service_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,9 +159,16 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-# tutle_spawn client
+# turtle_spawn client
 add_executable(turtle_spawn src/turtle_spawn.cpp)
 target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
+
+# turtle command server
+add_executable(turtle_command_server src/turtle_command_server)
+target_link_libraries(turtle_command_server ${catkin_LIBRARIES})
+
+# for Person.srv
+
 
 #############
 ## Install ##
@@ -203,7 +217,7 @@ target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_learningService.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_learning_service.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

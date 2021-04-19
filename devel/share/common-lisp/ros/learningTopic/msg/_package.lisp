@@ -1,4 +1,4 @@
-(cl:defpackage learningTopic-msg
+(cl:defpackage learning_topic-msg
   (:use )
   (:export
    "<PERSON>"

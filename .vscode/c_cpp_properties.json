@@ -7,7 +7,7 @@
       },
       "includePath": [
         "/opt/ros/melodic/include/**",
-        "/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/include/**",
+        "/home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/include/**",
         "/usr/include/**"
       ],
       "name": "ROS"

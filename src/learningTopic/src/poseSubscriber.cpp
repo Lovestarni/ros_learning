@@ -1,6 +1,6 @@
 /*
- * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/poseSubscriber.cpp
- * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src
+ * Filename: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src/poseSubscriber.cpp
+ * Path: /home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/src
  * Created Date: Saturday, April 17th 2021, 8:34:54 pm
  * Author: Skywalker Wang
  * Function: 订阅turtle1/pose topic, 消息类型turtlesim::Pose

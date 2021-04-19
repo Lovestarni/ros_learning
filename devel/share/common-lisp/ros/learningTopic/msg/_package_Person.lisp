@@ -1,4 +1,4 @@
-(cl:in-package learningTopic-msg)
+(cl:in-package learning_topic-msg)
 (cl:export '(NAME-VAL
           NAME
           SEX-VAL

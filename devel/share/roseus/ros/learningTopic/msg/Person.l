@@ -1,31 +1,31 @@
 ;; Auto-generated. Do not edit!
 
 
-(when (boundp 'learningTopic::Person)
-  (if (not (find-package "LEARNINGTOPIC"))
-    (make-package "LEARNINGTOPIC"))
-  (shadow 'Person (find-package "LEARNINGTOPIC")))
-(unless (find-package "LEARNINGTOPIC::PERSON")
-  (make-package "LEARNINGTOPIC::PERSON"))
+(when (boundp 'learning_topic::Person)
+  (if (not (find-package "learning_topic"))
+    (make-package "learning_topic"))
+  (shadow 'Person (find-package "learning_topic")))
+(unless (find-package "learning_topic::PERSON")
+  (make-package "learning_topic::PERSON"))
 
 (in-package "ROS")
 ;;//! \htmlinclude Person.msg.html
 
 
-(intern "*UNKNOWN*" (find-package "LEARNINGTOPIC::PERSON"))
-(shadow '*UNKNOWN* (find-package "LEARNINGTOPIC::PERSON"))
-(defconstant learningTopic::Person::*UNKNOWN* 0)
-(intern "*MALE*" (find-package "LEARNINGTOPIC::PERSON"))
-(shadow '*MALE* (find-package "LEARNINGTOPIC::PERSON"))
-(defconstant learningTopic::Person::*MALE* 1)
-(intern "*FEMALE*" (find-package "LEARNINGTOPIC::PERSON"))
-(shadow '*FEMALE* (find-package "LEARNINGTOPIC::PERSON"))
-(defconstant learningTopic::Person::*FEMALE* 2)
-(defclass learningTopic::Person
+(intern "*UNKNOWN*" (find-package "learning_topic::PERSON"))
+(shadow '*UNKNOWN* (find-package "learning_topic::PERSON"))
+(defconstant learning_topic::Person::*UNKNOWN* 0)
+(intern "*MALE*" (find-package "learning_topic::PERSON"))
+(shadow '*MALE* (find-package "learning_topic::PERSON"))
+(defconstant learning_topic::Person::*MALE* 1)
+(intern "*FEMALE*" (find-package "learning_topic::PERSON"))
+(shadow '*FEMALE* (find-package "learning_topic::PERSON"))
+(defconstant learning_topic::Person::*FEMALE* 2)
+(defclass learning_topic::Person
   :super ros::object
   :slots (_name _sex _age ))
 
-(defmethod learningTopic::Person
+(defmethod learning_topic::Person
   (:init
    (&key
     ((:name __name) "")
@@ -80,9 +80,9 @@
    self)
   )
 
-(setf (get learningTopic::Person :md5sum-) "8361f88618d6779bd872f0ba928ced56")
-(setf (get learningTopic::Person :datatype-) "learningTopic/Person")
-(setf (get learningTopic::Person :definition-)
+(setf (get learning_topic::Person :md5sum-) "8361f88618d6779bd872f0ba928ced56")
+(setf (get learning_topic::Person :datatype-) "learning_topic/Person")
+(setf (get learning_topic::Person :definition-)
       "string name
 uint8 sex
 uint8 age
@@ -94,6 +94,6 @@ uint8 female = 2
 
 
 
-(provide :learningTopic/Person "8361f88618d6779bd872f0ba928ced56")
+(provide :learning_topic/Person "8361f88618d6779bd872f0ba928ced56")
 
 

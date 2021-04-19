@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -78,16 +90,27 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : edit_cache/fast
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -101,39 +124,16 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,6 +166,111 @@ preinstall/fast:
 depend:
 	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+learningService/CMakeFiles/turtle_spawn.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/turtle_spawn.dir/rule
+.PHONY : learningService/CMakeFiles/turtle_spawn.dir/rule
+
+# Convenience name for target.
+turtle_spawn: learningService/CMakeFiles/turtle_spawn.dir/rule
+
+.PHONY : turtle_spawn
+
+# fast build rule for target.
+turtle_spawn/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_spawn.dir/build.make learningService/CMakeFiles/turtle_spawn.dir/build
+.PHONY : turtle_spawn/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_genpy.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_genpy.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_genpy.dir/rule
+
+# Convenience name for target.
+learning_service_genpy: learningService/CMakeFiles/learning_service_genpy.dir/rule
+
+.PHONY : learning_service_genpy
+
+# fast build rule for target.
+learning_service_genpy/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_genpy.dir/build.make learningService/CMakeFiles/learning_service_genpy.dir/build
+.PHONY : learning_service_genpy/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/turtle_command_server.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/turtle_command_server.dir/rule
+.PHONY : learningService/CMakeFiles/turtle_command_server.dir/rule
+
+# Convenience name for target.
+turtle_command_server: learningService/CMakeFiles/turtle_command_server.dir/rule
+
+.PHONY : turtle_command_server
+
+# fast build rule for target.
+turtle_command_server/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_command_server.dir/build.make learningService/CMakeFiles/turtle_command_server.dir/build
+.PHONY : turtle_command_server/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages_py.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages_py.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages_py.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages_py: learningService/CMakeFiles/learning_service_generate_messages_py.dir/rule
+
+.PHONY : learning_service_generate_messages_py
+
+# fast build rule for target.
+learning_service_generate_messages_py/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages_py.dir/build.make learningService/CMakeFiles/learning_service_generate_messages_py.dir/build
+.PHONY : learning_service_generate_messages_py/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_gennodejs.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_gennodejs.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_gennodejs.dir/rule
+
+# Convenience name for target.
+learning_service_gennodejs: learningService/CMakeFiles/learning_service_gennodejs.dir/rule
+
+.PHONY : learning_service_gennodejs
+
+# fast build rule for target.
+learning_service_gennodejs/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_gennodejs.dir/build.make learningService/CMakeFiles/learning_service_gennodejs.dir/build
+.PHONY : learning_service_gennodejs/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_genlisp.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_genlisp.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_genlisp.dir/rule
+
+# Convenience name for target.
+learning_service_genlisp: learningService/CMakeFiles/learning_service_genlisp.dir/rule
+
+.PHONY : learning_service_genlisp
+
+# fast build rule for target.
+learning_service_genlisp/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_genlisp.dir/build.make learningService/CMakeFiles/learning_service_genlisp.dir/build
+.PHONY : learning_service_genlisp/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages_lisp: learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/rule
+
+.PHONY : learning_service_generate_messages_lisp
+
+# fast build rule for target.
+learning_service_generate_messages_lisp/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/build.make learningService/CMakeFiles/learning_service_generate_messages_lisp.dir/build
+.PHONY : learning_service_generate_messages_lisp/fast
 
 # Convenience name for target.
 learningService/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -288,6 +393,21 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages: learningService/CMakeFiles/learning_service_generate_messages.dir/rule
+
+.PHONY : learning_service_generate_messages
+
+# fast build rule for target.
+learning_service_generate_messages/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages.dir/build.make learningService/CMakeFiles/learning_service_generate_messages.dir/build
+.PHONY : learning_service_generate_messages/fast
+
+# Convenience name for target.
 learningService/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
 	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : learningService/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
@@ -331,6 +451,51 @@ rosgraph_msgs_generate_messages_py: learningService/CMakeFiles/rosgraph_msgs_gen
 rosgraph_msgs_generate_messages_py/fast:
 	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make learningService/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages_nodejs: learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/rule
+
+.PHONY : learning_service_generate_messages_nodejs
+
+# fast build rule for target.
+learning_service_generate_messages_nodejs/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/build.make learningService/CMakeFiles/learning_service_generate_messages_nodejs.dir/build
+.PHONY : learning_service_generate_messages_nodejs/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_geneus.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_geneus.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_geneus.dir/rule
+
+# Convenience name for target.
+learning_service_geneus: learningService/CMakeFiles/learning_service_geneus.dir/rule
+
+.PHONY : learning_service_geneus
+
+# fast build rule for target.
+learning_service_geneus/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_geneus.dir/build.make learningService/CMakeFiles/learning_service_geneus.dir/build
+.PHONY : learning_service_geneus/fast
 
 # Convenience name for target.
 learningService/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -588,21 +753,6 @@ turtlesim_generate_messages_py/fast:
 .PHONY : turtlesim_generate_messages_py/fast
 
 # Convenience name for target.
-learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make learningService/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
 learningService/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
 	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/std_srvs_generate_messages_py.dir/rule
 .PHONY : learningService/CMakeFiles/std_srvs_generate_messages_py.dir/rule
@@ -618,19 +768,91 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
-learningService/CMakeFiles/turtle_spawn.dir/rule:
-	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/turtle_spawn.dir/rule
-.PHONY : learningService/CMakeFiles/turtle_spawn.dir/rule
+learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/rule
+.PHONY : learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/rule
 
 # Convenience name for target.
-turtle_spawn: learningService/CMakeFiles/turtle_spawn.dir/rule
+_learning_service_generate_messages_check_deps_Person: learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/rule
 
-.PHONY : turtle_spawn
+.PHONY : _learning_service_generate_messages_check_deps_Person
 
 # fast build rule for target.
-turtle_spawn/fast:
-	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_spawn.dir/build.make learningService/CMakeFiles/turtle_spawn.dir/build
-.PHONY : turtle_spawn/fast
+_learning_service_generate_messages_check_deps_Person/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/build.make learningService/CMakeFiles/_learning_service_generate_messages_check_deps_Person.dir/build
+.PHONY : _learning_service_generate_messages_check_deps_Person/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages_cpp: learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/rule
+
+.PHONY : learning_service_generate_messages_cpp
+
+# fast build rule for target.
+learning_service_generate_messages_cpp/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/build.make learningService/CMakeFiles/learning_service_generate_messages_cpp.dir/build
+.PHONY : learning_service_generate_messages_cpp/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_gencpp.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_gencpp.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_gencpp.dir/rule
+
+# Convenience name for target.
+learning_service_gencpp: learningService/CMakeFiles/learning_service_gencpp.dir/rule
+
+.PHONY : learning_service_gencpp
+
+# fast build rule for target.
+learning_service_gencpp/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_gencpp.dir/build.make learningService/CMakeFiles/learning_service_gencpp.dir/build
+.PHONY : learning_service_gencpp/fast
+
+# Convenience name for target.
+learningService/CMakeFiles/learning_service_generate_messages_eus.dir/rule:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learningService/CMakeFiles/learning_service_generate_messages_eus.dir/rule
+.PHONY : learningService/CMakeFiles/learning_service_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+learning_service_generate_messages_eus: learningService/CMakeFiles/learning_service_generate_messages_eus.dir/rule
+
+.PHONY : learning_service_generate_messages_eus
+
+# fast build rule for target.
+learning_service_generate_messages_eus/fast:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/learning_service_generate_messages_eus.dir/build.make learningService/CMakeFiles/learning_service_generate_messages_eus.dir/build
+.PHONY : learning_service_generate_messages_eus/fast
+
+src/turtle_command_server.o: src/turtle_command_server.cpp.o
+
+.PHONY : src/turtle_command_server.o
+
+# target to build an object file
+src/turtle_command_server.cpp.o:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_command_server.dir/build.make learningService/CMakeFiles/turtle_command_server.dir/src/turtle_command_server.cpp.o
+.PHONY : src/turtle_command_server.cpp.o
+
+src/turtle_command_server.i: src/turtle_command_server.cpp.i
+
+.PHONY : src/turtle_command_server.i
+
+# target to preprocess a source file
+src/turtle_command_server.cpp.i:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_command_server.dir/build.make learningService/CMakeFiles/turtle_command_server.dir/src/turtle_command_server.cpp.i
+.PHONY : src/turtle_command_server.cpp.i
+
+src/turtle_command_server.s: src/turtle_command_server.cpp.s
+
+.PHONY : src/turtle_command_server.s
+
+# target to generate assembly for a file
+src/turtle_command_server.cpp.s:
+	cd /home/skywalker/Documents/code/ros/catkin_ws/build && $(MAKE) -f learningService/CMakeFiles/turtle_command_server.dir/build.make learningService/CMakeFiles/turtle_command_server.dir/src/turtle_command_server.cpp.s
+.PHONY : src/turtle_command_server.cpp.s
 
 src/turtle_spawn.o: src/turtle_spawn.cpp.o
 
@@ -666,8 +888,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... roscpp_generate_messages_py"
+	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... test"
+	@echo "... turtle_spawn"
+	@echo "... learning_service_genpy"
+	@echo "... turtle_command_server"
+	@echo "... learning_service_generate_messages_py"
+	@echo "... learning_service_gennodejs"
+	@echo "... learning_service_genlisp"
+	@echo "... learning_service_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -675,23 +906,25 @@ help:
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... learning_service_generate_messages"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... learning_service_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... learning_service_geneus"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... install/local"
 	@echo "... std_srvs_generate_messages_eus"
-	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... install"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... turtlesim_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_nodejs"
@@ -699,10 +932,15 @@ help:
 	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... turtlesim_generate_messages_py"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rebuild_cache"
 	@echo "... std_srvs_generate_messages_py"
-	@echo "... turtle_spawn"
+	@echo "... _learning_service_generate_messages_check_deps_Person"
+	@echo "... edit_cache"
+	@echo "... learning_service_generate_messages_cpp"
+	@echo "... learning_service_gencpp"
+	@echo "... learning_service_generate_messages_eus"
+	@echo "... src/turtle_command_server.o"
+	@echo "... src/turtle_command_server.i"
+	@echo "... src/turtle_command_server.s"
 	@echo "... src/turtle_spawn.o"
 	@echo "... src/turtle_spawn.i"
 	@echo "... src/turtle_spawn.s"

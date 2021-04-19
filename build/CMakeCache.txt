@@ -361,16 +361,16 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Value Computed by CMake
-learningService_BINARY_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/build/learningService
+learning_service_BINARY_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/build/learningService
 
 //Value Computed by CMake
-learningService_SOURCE_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/src/learningService
+learning_service_SOURCE_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/src/learningService
 
 //Value Computed by CMake
-learningTopic_BINARY_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic
+learning_topic_BINARY_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic
 
 //Value Computed by CMake
-learningTopic_SOURCE_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic
+learning_topic_SOURCE_DIR:STATIC=/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so

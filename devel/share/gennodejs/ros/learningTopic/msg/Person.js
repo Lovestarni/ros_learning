@@ -1,6 +1,6 @@
 // Auto-generated. Do not edit!
 
-// (in-package learningTopic.msg)
+// (in-package learning_topic.msg)
 
 
 "use strict";
@@ -76,7 +76,7 @@ class Person {
 
   static datatype() {
     // Returns string type for a message object
-    return 'learningTopic/Person';
+    return 'learning_topic/Person';
   }
 
   static md5sum() {

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/skywalker/Documents/code/ros/catkin_ws/devel/include/learningTopic/Person.h
+/home/skywalker/Documents/code/ros/catkin_ws/devel/include/learning_topic/Person.h
 string
 -
 vector
@@ -25,8 +25,8 @@ ros/message_operations.h
 /home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/personSubscriber.cpp
 ros/ros.h
 -
-learningTopic/Person.h
-/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/learningTopic/Person.h
+learning_topic/Person.h
+/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/src/learning_topic/Person.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

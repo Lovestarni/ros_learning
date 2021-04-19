@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/person_subscriber.dir/src/personSubscriber.cpp.o"
-  "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/learningTopic/person_subscriber.pdb"
-  "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/learningTopic/person_subscriber"
+  "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/learning_topic/person_subscriber.pdb"
+  "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/learning_topic/person_subscriber"
 )
 
 # Per-language clean rules from dependency scanning.

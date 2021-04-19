@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learningTopic/msg" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/msg/Person.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_topic/msg" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/msg/Person.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learningTopic/cmake" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learningTopic-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_topic/cmake" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learning_topic-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/include/learningTopic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/include/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/roseus/ros/learningTopic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/roseus/ros/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/common-lisp/ros/learningTopic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/common-lisp/ros/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/gennodejs/ros/learningTopic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/share/gennodejs/ros/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/python2.7/dist-packages/learningTopic")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/python2.7/dist-packages/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/python2.7/dist-packages/learningTopic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/skywalker/Documents/code/ros/catkin_ws/devel/lib/python2.7/dist-packages/learning_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learningTopic.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learning_topic.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learningTopic/cmake" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learningTopic-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_topic/cmake" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learning_topic-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learningTopic/cmake" TYPE FILE FILES
-    "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learningTopicConfig.cmake"
-    "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learningTopicConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_topic/cmake" TYPE FILE FILES
+    "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learning_topicConfig.cmake"
+    "/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/catkin_generated/installspace/learning_topicConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learningTopic" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_topic" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/src/learningTopic/package.xml")
 endif()
 

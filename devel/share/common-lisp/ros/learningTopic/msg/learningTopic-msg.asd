@@ -1,7 +1,7 @@
 
 (cl:in-package :asdf)
 
-(defsystem "learningTopic-msg"
+(defsystem "learning_topic-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils )
   :components ((:file "_package")
     (:file "Person" :depends-on ("_package_Person"))
