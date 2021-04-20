@@ -1,2 +1,2 @@
-learningService:learningTopic
+learning_launch:learning_parameter:learning_service:learning_tf:learning_topic
 -DCATKIN_DEVEL_PREFIX=/home/skywalker/Documents/code/ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/skywalker/Documents/code/ros/catkin_ws/install -G Unix Makefiles

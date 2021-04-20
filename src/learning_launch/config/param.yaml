@@ -1,0 +1,7 @@
+A: 23
+B: "hello"
+
+# 命名空间
+group:
+  C: 456
+  D: "hello"

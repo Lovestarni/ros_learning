@@ -131,8 +131,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learningService/cmake_install.cmake")
-  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learningTopic/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_launch/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_parameter/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_service/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_tf/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_topic/cmake_install.cmake")
 
 endif()
 

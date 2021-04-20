@@ -6,7 +6,10 @@
         "limitSymbolsToIncludedHeaders": true
       },
       "includePath": [
+        "/home/skywalker/Documents/code/ros/catkin_ws/devel/include/**",
         "/opt/ros/melodic/include/**",
+        "/home/skywalker/Documents/code/ros/catkin_ws/src/learning_parameter/include/**",
+        "/home/skywalker/Documents/code/ros/catkin_ws/src/learning_service/include/**",
         "/home/skywalker/Documents/code/ros/catkin_ws/src/learning_topic/include/**",
         "/usr/include/**"
       ],

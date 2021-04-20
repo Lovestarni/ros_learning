@@ -10,6 +10,11 @@
 		],
 		"python.analysis.extraPaths": [
 			"/opt/ros/melodic/lib/python2.7/dist-packages"
-		]
+		],
+		"ros.distro": "melodic",
+		"files.associations": {
+			"*.tcc": "cpp",
+			"cmath": "cpp"
+		}
 	}
 }

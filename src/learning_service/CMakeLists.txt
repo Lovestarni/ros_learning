@@ -167,7 +167,15 @@ target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
 add_executable(turtle_command_server src/turtle_command_server)
 target_link_libraries(turtle_command_server ${catkin_LIBRARIES})
 
-# for Person.srv
+# person info server
+add_executable(person_server src/person_server.cpp)
+target_link_libraries(person_server ${catkin_LIBRARIES})
+add_dependencies(person_server ${PROJECT_NAME}_gencpp)
+
+# person info client
+add_executable(person_client src/person_client.cpp)
+target_link_libraries(person_client ${catkin_LIBRARIES})
+add_dependencies(person_client ${PROJECT_NAME}_gencpp)
 
 
 #############

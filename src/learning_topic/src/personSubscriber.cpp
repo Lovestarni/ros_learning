@@ -24,7 +24,7 @@
 //回调函数
 void infoCallback(const learning_topic::Person::ConstPtr& msg){
     //打印出接收到的消息
-    ROS_INFO("Publich Person Info: name:%s age:%d sex:%d", msg->name.c_str(), msg->age, msg->sex);
+    ROS_INFO("Receive Person Info: name:%s age:%d sex:%d", msg->name.c_str(), msg->age, msg->sex);
 }
 
 int main(int argc, char **argv){
