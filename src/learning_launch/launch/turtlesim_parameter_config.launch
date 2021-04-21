@@ -7,4 +7,5 @@
         <rosparam file="$(find learning_launch)/config/param.yaml" command="load" />
     </node>
     <node pkg="turtlesim" type="turtle_teleop_key" name="turtle_teleop_key" output="screen"/>
-</launch>
+</launch>rget learning_topic_generate_messages_eus
+[ 72%] Built ta
