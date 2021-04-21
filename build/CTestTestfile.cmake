@@ -7,6 +7,8 @@
 subdirs("gtest")
 subdirs("learning_launch")
 subdirs("learning_parameter")
+subdirs("openai_ros/openai_ros")
+subdirs("learning_turtlebot2_training")
 subdirs("learning_service")
 subdirs("learning_tf")
 subdirs("learning_topic")
