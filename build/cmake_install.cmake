@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/skywalker/Documents/code/ros/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -49,38 +49,38 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/_setup_util.py")
+   "/usr/local/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE PROGRAM FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/env.sh")
+   "/usr/local/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE PROGRAM FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/setup.bash;/home/skywalker/Documents/code/ros/catkin_ws/install/local_setup.bash")
+   "/usr/local/setup.bash;/usr/local/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE FILE FILES
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/setup.bash"
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/local_setup.bash"
     )
@@ -88,14 +88,14 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/setup.sh;/home/skywalker/Documents/code/ros/catkin_ws/install/local_setup.sh")
+   "/usr/local/setup.sh;/usr/local/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE FILE FILES
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/setup.sh"
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/local_setup.sh"
     )
@@ -103,14 +103,14 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/setup.zsh;/home/skywalker/Documents/code/ros/catkin_ws/install/local_setup.zsh")
+   "/usr/local/setup.zsh;/usr/local/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE FILE FILES
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/setup.zsh"
     "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/local_setup.zsh"
     )
@@ -118,26 +118,39 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/skywalker/Documents/code/ros/catkin_ws/install/.rosinstall")
+   "/usr/local/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/skywalker/Documents/code/ros/catkin_ws/install" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/skywalker/Documents/code/ros/catkin_ws/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_launch/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_machine_learning/turtlebot3_machine_learning/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_msgs/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_navigation/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_simulations/turtlebot3_simulations/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_parameter/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/openai_ros/openai_ros/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_turtlebot2_training/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_bringup/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_machine_learning/turtlebot3_dqn/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_example/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_simulations/turtlebot3_fake/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3_simulations/turtlebot3_gazebo/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_slam/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_teleop/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_service/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_tf/cmake_install.cmake")
   include("/home/skywalker/Documents/code/ros/catkin_ws/build/learning_topic/cmake_install.cmake")
+  include("/home/skywalker/Documents/code/ros/catkin_ws/build/turtlebot3/turtlebot3_description/cmake_install.cmake")
 
 endif()
 
